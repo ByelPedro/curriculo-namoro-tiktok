@@ -1,0 +1,205 @@
+/* Estilo base para o currículo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+    background-color: lightpink;
+    color: black; /* Cor preta para todos os textos */
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+}
+
+/* Estilos para os corações flutuantes */
+@keyframes float {
+    0% {
+        transform: translateY(100vh) scale(0.9);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(5.5);
+        opacity: 0;
+    }
+}
+
+.heart-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Mantém os corações atrás do conteúdo */
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    transform: rotate(-45deg);
+    animation: float 5s infinite ease-in-out;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -25px;
+    left: 0;
+}
+
+.heart::after {
+    left: 25px;
+}
+
+/* Estilos para a seção de informações */
+.header {
+    text-align: center;
+}
+
+.header img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: black;
+    margin-bottom: 0;
+}
+
+p {
+    font-size: 1.2rem;
+    font-family: Arial, sans-serif; /* Fonte Arial para os parágrafos */
+    color: black;
+    margin: 0px;
+}
+
+.styled-line {
+    margin: 0px;
+}
+
+h2 {
+    font-family: 'Nerko One', cursive; /* Fonte Nerko One para h2 */
+    color: black;
+    font-size: 45px;
+    margin: 0px;
+}
+
+ul {
+    margin-top: 0px;
+}
+
+.redes-sociais {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.redes-sociais a {
+    margin: 0 10px;
+    color: black;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.curriculo-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    text-align: center;
+    align-items: center;
+    color: black;
+}
+
+.curriculo-info p {
+    margin: 5px 0;
+}
+
+.objetivos,
+.pt-positivos,
+.pt-negativos {
+    margin-bottom: 20px;
+}
+
+.pt-positivos ul,
+.pt-negativos ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.pt-positivos li,
+.pt-negativos li {
+    margin-bottom: 10px;
+    color: black;
+}
+
+.pt-positivos li strong,
+.pt-negativos li strong {
+    color: black;
+}
+
+/* Estilo para a caixa que contém o texto e os botões */
+.box {
+    margin: 20px 30px 5px 30px;
+    text-align: center;
+    position: relative;
+    max-height: 150px;
+    max-width: 800px;
+    min-width: 100px;
+    min-height: 100px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f5f5f5;
+}
+
+.box p {
+    font-family: 'Nerko One', cursive;
+    size: 40x;
+}
+
+/* Contêiner para alinhar os botões lado a lado */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+}
+
+/* Estilo para os botões */
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+}
+
+button#no {
+    background-color: #f44336;
+    position: relative; /* Deixe o botão "Não" com 'relative' aqui */
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}

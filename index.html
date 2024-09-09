@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo - Gabryel J. Pedro</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="heart-container"></div> <!-- Contêiner dos corações flutuantes -->
+    <div class="container">
+        <!-- Cabeçalho do currículo -->
+        <div class="header">
+            <img src="img/sua-foto.jpg" alt="SEU NOME">
+            <h1><strong>ADICIONAR</strong></h1>
+            <p>IDADE • PROFISSÃO<p>
+        </div>
+
+        <!-- Redes sociais -->
+        <div class="redes-sociais">
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://open.spotify.com/"target="_blank"><i class="fab fa-spotify"></i></a>
+        </div>
+
+        <!-- Informações principais -->
+        <div class="curriculo-info">
+            <div>
+                <p><strong>Cursando: </strong>ADICIONAR</p>
+                <p><strong>Artista Favorito: </strong> ADICIONAR</p>
+            </div>
+            <div>
+                <p><strong>Signo: </strong>ADICIONAR</p>
+                <p><strong>Altura: </strong>ADICIONAR</p>
+            </div>
+        </div>
+
+        <!-- Objetivos -->
+        <div class="objetivos">
+            <h2>Objetivos</h2>
+            <p>ADICIONAR</p>
+                <hr class="styled-line">
+        </div>
+
+        <!-- Pontos Positivos -->
+        <div class="pt-positivos">
+            <h2>Pontos Positivos</h2>
+            <p>
+                <li><strong>ADICIONAR: </strong> ADICIONAR</li>
+                <li><strong>ADICIONAR:</strong> ADICIONAR</li>
+                <li><strong>ADICIONAR:</strong> ADICIONAR</li>
+                <li><strong>ADICIONAR:</strong> ADICIONAR</li>
+                <li><strong>ADICIONAR:</strong> ADICIONAR</li>
+                <li><strong>ADICIONAR:</strong> ADICIONAR</li>
+                <li><strong>ADICIONAR:</strong> ADICIONAR</li>
+                <hr class="styled-line">
+
+            <p>
+        </div>
+
+        <!-- Pontos Negativos -->
+        <div class="pt-negativos">
+            <h2>Pontos Negativos</h2>
+            <p>
+                <li><strong>ADICIONAR:</strong> ADICIONAR</li>
+                <li><strong>ADICIONAR:</strong> ADICIONAR</li>
+                <li><strong>ADICIONAR:</strong> ADICIONAR</li>
+                <li><strong>ADICIONAR:</strong> ADICIONAR</li>
+                <li><strong>ADICIONAR:</strong> ADICIONAR</li>
+
+                <hr class="styled-line">
+            </p>
+        </div>
+
+        <!-- Mensagem Final -->
+        <div class="final">
+            
+                <h2>Se você chegou até aqui, parabéns!</h2>
+                <li><strong>Você é uma maluca(o) por ler um currículo desses. </strong> Porém eu gosto de gente maluca me chama para combinarmos um . Prometo que não sou tão esquisito(a)... pelo menos não tanto.</li>
+            
+        </div>
+        <div class="box">
+            <p>Você aceita sair para um date comigo?</p>
+            <div class="button-container">
+                <button>
+                    <a id="yes">Sim</a>
+                </button>
+                <button id="no">Não</button>
+            </div>
+        </div>
+
+        <!-- Script do botão "Não" -->
+        <script>
+            let button = document.getElementById('no');
+            let box = document.querySelector('.box'); // Seleciona a div .box
+
+            button.addEventListener('mouseover', function () {
+                let boxRect = box.getBoundingClientRect(); // Pega as dimensões da div .box
+                let buttonRect = button.getBoundingClientRect(); // Pega as dimensões do botão
+
+                let height = boxRect.height - buttonRect.height; // Altura disponível dentro da .box
+                let width = boxRect.width - buttonRect.width; // Largura disponível dentro da .box
+
+                // Calcula novas posições aleatórias dentro da .box
+                let newTop = Math.random() * height;
+                let newLeft = Math.random() * width;
+
+                button.style.position = 'absolute';
+                button.style.top = newTop + 'px';
+                button.style.left = newLeft + 'px';
+            });
+        </script>
+
+        <!-- Script dos corações flutuantes -->
+        <script>
+            function createHeart() {
+                const heartContainer = document.querySelector('.heart-container');
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.style.left = Math.random() * 100 + 'vw'; // Posição aleatória horizontal
+                heart.style.animationDuration = Math.random() * 3 + 3 + 's'; // Duração aleatória da animação
+                heart.style.opacity = Math.random(); // Opacidade aleatória
+                heartContainer.appendChild(heart);
+
+                // Remover o coração após a animação
+                setTimeout(() => {
+                    heart.remove();
+                }, 5000); // Tempo de vida dos corações
+            }
+
+            // Gerar corações a cada 300ms
+            setInterval(createHeart, 300);
+        </script>
+
+        <script>
+            document.getElementById('yes').addEventListener('click', function () {
+                // URL para abrir o Instagram e tentar direcionar para a DM
+                let instaUrl = 'https://www.instagram.com/_gabryelp/?message=Quero%20marcar%20um%20date%20com%20você';
+
+                // Redireciona para o Instagram
+                window.open(instaUrl, '_blank');
+            });
+        </script>
+    </div>
+</body>
+
+</html>
